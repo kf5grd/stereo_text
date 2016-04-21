@@ -2,13 +2,26 @@
 stereo_text.py
 ============
 
-**stereo_text.py** is a proof of concept designed to generate blocks of text with a hidden 3d message in the form of an [autostereogram](https://en.wikipedia.org/wiki/Autostereogram)
+**stereo_text.py** is a proof of concept designed to generate blocks of text with a hidden 3d message in the form of an [autostereogram](https://en.wikipedia.org/wiki/Autostereogram). It takes input from stdin and converts any words wrapped in /forward slashes/ into 3d.
 
 -----
 
-**Usage:** The script takes input from stdin and converts any words wrapped in /forward slashes/ into 3d. 
+**Usage and examples:**
 
 ```
+~/stereo_text$ ./stereo_text.py -h
+usage: stereo_text.py [-h] [-s] [-p PADDING]
+
+generate blocks of text with a hidden 3dmessage in the form of an
+autostereogram
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -s          Convert single spaces to double spaces. This can help withwith
+              formatting.
+  -p PADDING  Number ofspaces between the end of the longest line on the first
+              panel, andbeginning of the next panel. Default: 10
+
 ~/stereo_text$ cat example.txt
 The this past /random/ unexplainably contrary
 and before hit joyfully /gibberish/ bluebird
@@ -16,7 +29,7 @@ fishily and /just/ much ladybug hyena chaste
 elephant until far /for/ some since and prior
 visually cuckoo magically /example/ goodness that.
 
-~/stereo_text$ cat example.txt | ./stereo_text.py
+~/stereo_text$ cat example.txt | ./stereo_text.py -s -p 5
 The  this  past  random  unexplainably  contrary            The  this  past random   unexplainably  contrary
 and  before  hit  joyfully  gibberish  bluebird             and  before  hit  joyfully gibberish   bluebird
 fishily  and  just  much  ladybug  hyena  chaste            fishily  and just   much  ladybug  hyena  chaste
