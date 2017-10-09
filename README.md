@@ -5,8 +5,8 @@ stereo_text.py
 
 Currently it can generate 2 different types of autostereogram:
 
-* *Panel*: Takes text input from a file or stdin. Any text in /forward slashes/ will appear in the foreground, while any text in \backslashes\ will drop into the background. All other text will be in between. See panel_example.txt
-* *SIRT (Single Image Random Text)*: Takes a depthmap input from a file or stdin. The depthmap consists of multiple lines, which must all be the same length. Each line is a series of numbers from 0 to 9, with 0 representing the lowest depth (farthest away) and 9 representing the highest depth (closest). All depths are relative to the depth before it, so any number on the depth map cannot be more than 1 higher or lower than the number before or after it. See sirt_example.txt
+* **Panel**: Takes text input from a file or stdin. Any text in /forward slashes/ will appear in the foreground, while any text in \backslashes\ will drop into the background. All other text will be in between. See panel_example.txt
+* **SIRT (Single Image Random Text)**: Takes a depthmap input from a file or stdin. The depthmap consists of multiple lines, which must all be the same length. Each line is a series of numbers from 0 to 9, with 0 representing the lowest depth (farthest away) and 9 representing the highest depth (closest). All depths are relative to the depth before it, so any number on the depth map cannot be more than 1 higher or lower than the number before or after it. See sirt_example.txt
 
 -----
 
@@ -16,7 +16,7 @@ Currently it can generate 2 different types of autostereogram:
 ~/ $ git clone https://github.com/kf5grd/stereo_text.git
 ~/ $ cd ./stereo_text
 ~/stereo_text/ $ pip install .
-
+```
 -----
 
 **Usage and examples:**
