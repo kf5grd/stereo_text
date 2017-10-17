@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from stereo_text import stereo_panel, stereo_sirt
 import click
-import sys
+
 
 @click.group()
 def cli():
@@ -12,6 +12,7 @@ def cli():
     idea of what input is expected.
     """
     pass
+
 
 @cli.command()
 @click.option('--hpad', '-p', default=1, help='Horizontal padding')
@@ -28,20 +29,22 @@ def panel(hpad, vpad, dbl, input):
     panel = stereo_panel(text, hpad, vpad, dbl)
     click.echo(panel)
 
+
 @cli.command()
 @click.option('--pattern-length', '-l', default=15, help='Pattern length',
-              type=click.IntRange(5,34, clamp=True))
+              type=click.IntRange(5, 34, clamp=True))
 @click.argument('input', type=click.File('r'))
 def sirt(input, pattern_length):
     """
     Generates a single block of seemingly random text that, when
     looked at with parallel vision, shows a 3D image based
     on the provided depth map.
-    
+
     SIRT = Single Image Random Text
     """
     sirt = stereo_sirt(input.read(), pattern_length)
     click.echo(sirt)
+
 
 if __name__ == '__main__':
     cli()
